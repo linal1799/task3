@@ -48,6 +48,7 @@
         <tr>
             <th>title</th>
             <th>description</th>
+            <th>status</th>
             <th>edit</th>
             <th>delete</th>
           </tr>
@@ -59,6 +60,8 @@
         <tr>
           <td>{{$d->title}}</td>
           <td>{{$d->description}}</td>
+          <td>{{$d->status}}</td>
+
           <td><a href="{{route('edit',$d->id)}}"><button class="btn btn-success">Edit</button></a></td>
           <td><a href="{{route('delete',$d->id)}}"><button class="btn btn-success">delete</button></a></td>
         </tr>

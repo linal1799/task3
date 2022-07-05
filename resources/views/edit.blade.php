@@ -124,6 +124,10 @@
             <textarea type="text" class="form-control"  placeholder="Enter description" name="description" value="{{$data->description}}">{{$data->description}} </textarea>
           </div>
 
+          <div class="form-group">
+            <label for="email">Status:</label>
+            <input type="text" class="form-control"  placeholder="Enter status" name="title" value="{{$data->status}}">
+          </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </div>
       </form>

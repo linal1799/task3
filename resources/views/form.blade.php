@@ -85,13 +85,16 @@
         @csrf
             <div class="form-group">
           <label for="title">title:</label>
-          <input type="text" class="form-control" id="title" placeholder="Enter " name="title">
+          <input type="text" class="form-control" name="title" id="title" placeholder="Enter " name="title">
         </div>
         <div class="form-group">
           <label for="description">description:</label>
-          <textarea type="text" class="form-control" id="description" placeholder="Enter description" name="description"></textarea>
+          <textarea type="text" class="form-control" name="description" id="description" placeholder="Enter description" name="description"></textarea>
         </div>
-
+        <div class="form-group">
+            <label for="title">Status:</label>
+            <input type="text" class="form-control" name="status" id="status" placeholder="Enter " name="status">
+          </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
     </div>
