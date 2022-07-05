@@ -72,9 +72,9 @@
             <td>{{$category->name}}</td>
             <td>
                 @if ($category->status == 1)
-                Active
+                <spam class="badge badge-primary"> Active</spam>
                 @else
-                Inactive
+                <spam class="badge badge-danger"> Inactive</spam>
                 @endif
 
             </td>

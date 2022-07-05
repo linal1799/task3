@@ -44,7 +44,13 @@
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{@$blog->category->name}}</a>
                         </header>
                         <!-- Preview image figure-->
+                        @if(empty($blog->image))
+                        <a href="#!"><img class="card-img-top" src="{{asset('uploads_images/imm.jpg'.$blog->image)}}" alt="..." width="900px" height="400px" /></a>
+
+                        @else
                         <a href="#!"><img class="card-img-top" src="{{asset('uploads_images/'.$blog->image)}}" alt="..." width="900px" height="400px" /></a>
+
+                        @endif
                         <!-- Post content-->
                         <section class="mb-5">
                            {!!$blog->description!!}
@@ -113,7 +119,7 @@
                         <a href="#" class="text-muted hover-primary"><i class="fa fa-link"></i> {{$category->name}}</a>
 
                     </div>
-                   
+
 
                 </ul>
             </div>

@@ -12,7 +12,7 @@ class WelcomeController extends Controller
     public function index()
     {
 
-        $categories=category::paginate(6);
+        $categories=category::all();
         $featured_blog = Blog::latest()->first();
         $blogs = Blog::latest()->paginate(4);
 

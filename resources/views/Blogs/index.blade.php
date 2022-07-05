@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -84,7 +85,8 @@
         <tr allign="center">
             <td>{{$d->id}}</td>
             <td>{{$d->title}}</td>
-            <td>{!!$d->description!!}</td>
+            <td> {!!Str::words($d->description,10,'...')!!}</td>
+            {{-- <td>{!!$d->description!!}</td> --}}
             <td>
                 @if ($d->status == 1)
                <spam class="badge badge-primary"> Active</spam>
@@ -98,10 +100,10 @@
             {{-- @dd($d); --}}
             <td>{{$d->category->name}}</td>
             <td>
-                @if ($d->image == 'NULL')
-                <img src="{{'image.jpg'}}" width="50" class="rounded"> </td>
+                @if(empty($d->image))
+                <img src="{{asset('uploads_images/imm.jpg')}}" width="150" height="90"  >
                 @else
-                 <img src="{{asset('uploads_images/'.$d->image)}}" width="50" class="rounded">
+                <img class="card-img-top" src="{{asset('uploads_images/'.$d->image)}}" width="150" height="90" alt="Image">
                 @endif
 
             <td>

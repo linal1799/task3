@@ -13,10 +13,11 @@ class CategoryController extends Controller
     }
     public function store(Request $request)
     {
-     $this->validate($request,[
-         'name'=>'required',
-         'status'=>'required',
-     ]);
+        $this->validate($request,[
+            'name'=>'required',
+            'status'=>'required',
+           
+        ]);
         $category=new Category();
         $category->name=$request->name;
         $category->status=$request->status;
@@ -39,6 +40,10 @@ public function edit($id,Request $request)
 }
 public function update($id,Request $request)
 {
+    $this->validate($request,[
+        'name'=>'required',
+        'status'=>'required',
+    ]);
     $category=Category::find($id);
     $category->name=$request->name;
     $category->status=$request->status;

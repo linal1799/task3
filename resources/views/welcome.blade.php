@@ -18,14 +18,14 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="{{route('dashboard')}}">Start blog</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        {{-- <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li> --}}
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href=""></a></li>
                     </ul>
                 </div>
             </div>
@@ -65,73 +65,35 @@
                                                 <!-- Blog post-->
                                                 <div class="card mb-4">
                                                     @if(empty($post->image))
-                                                    <img src="{{asset('uploads_images/image.jpg')}}" width="250" height="130"  >
+                                                    <img src="{{asset('uploads_images/imm.jpg')}}" width="250" height="130"  >
                                                     @else
                                                      <img class="card-img-top" src="{{asset('uploads_images/'.$post->image)}}" width="250" height="130" alt="Image">
                                                     @endif
 
 
-                                                </div>
-                                                <div>
+                                                <div class="card-body">
                                                     <p class="mb-0 text-muted"><i class="fa fa-clock-o"></i> {{$post->created_at->format('d.m.Y')}}</p>
-                                                </div>
+
                                                 <h5 class="my-5">{{$post->title}}</h5>
                                                 <p class="card-text">{!!Str::words($post->description,10,'...')!!}</p>
 
-                                                {{-- <p class="card-text">{!!Str::limit($post->description,200)!!}</p> --}}
                                                 <a class="btn btn-primary" href="{{route('blogs.show',$post->id)}}">Read more →</a>
-
+                                            </div>
+                                                </div>
 
                                                 <!-- Blog post-->
 
                                             </div>
+
                                             @endforeach
-                                            {!! $blogs->links() !!}
+
+
 
                                         </div>
+                                        {!! $blogs->links() !!}
 
                     <!-- Comments section-->
-                    {{-- <section class="mb-5">
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <!-- Comment form-->
-                                <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
-                                <!-- Comment with nested comments-->
-                                <div class="d-flex mb-4">
-                                    <!-- Parent comment-->
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
-                                        <!-- Child comment 1-->
-                                        <div class="d-flex mt-4">
-                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                            <div class="ms-3">
-                                                <div class="fw-bold">Commenter Name</div>
-                                                And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
-                                            </div>
-                                        </div>
-                                        <!-- Child comment 2-->
-                                        <div class="d-flex mt-4">
-                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                            <div class="ms-3">
-                                                <div class="fw-bold">Commenter Name</div>
-                                                When you put money directly to a problem, it makes a good headline.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Single comment-->
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section> --}}
+
                 </div>
                 <!-- Side widgets-->
                 <div class="col-lg-4">
@@ -154,7 +116,7 @@
             <div class="col-sm-6">
                 <ul class="list-unstyled mb-0">
                     <div>
-                        <li><a href="{{route('index')}}?">{{$cat->name}}</a></li>
+                        <li><a href="">{{$cat->name}}</a></li>
 
                     </div>
 

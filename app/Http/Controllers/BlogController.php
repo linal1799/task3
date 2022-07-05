@@ -21,12 +21,12 @@ class BlogController extends Controller
     }
     public function store(Request $request)
     {
-    //  $this->validate($request,[
-    //      'title'=>'required',
-    //      'description'=>'required',
-    //      'status'=>'required',
-    //      'category_id'=>'required',
-    //  ]);
+     $this->validate($request,[
+         'title'=>'required',
+         'description'=>'required',
+         'status'=>'required',
+         'category_id'=>'required',
+     ]);
         $form=new Blog();
         $form->title=$request->title;
         $form->description=$request->description;
@@ -88,7 +88,7 @@ return redirect()->route('blogs.index') ->with('message','successfully deleted  
 }
 public function show($id){
     $blog=Blog::find($id);
-    $categories = Category::paginate(6);
+    $categories = Category::all();
     // $blog= blog::where('status')->get();
     return view ('blogs.show',compact('categories','blog'));
 
